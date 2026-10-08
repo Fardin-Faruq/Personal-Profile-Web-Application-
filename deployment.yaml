@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: student-event-app
-          image: YOUR_DOCKERHUB_USERNAME/student-event-app:latest
+          image: fardinfaruq/student-event-app:latest
           ports:
             - containerPort: 80
 
