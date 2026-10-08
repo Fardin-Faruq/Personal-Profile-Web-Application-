@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: student-event-app
+  name: html-demo
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: student-event-app
+      app: html-demo
   template:
     metadata:
       labels:
-        app: student-event-app
+        app: html-demo
     spec:
       containers:
-        - name: student-event-app
-          image: fardinfaruq/student-event-app:latest
+        - name: html-demo
+          image: fardinfaruq/html-demo:latest
           ports:
             - containerPort: 80
 
@@ -22,11 +22,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: student-event-service
+  name: html-demo-service
 spec:
   type: NodePort
   selector:
-    app: student-event-app
+    app: html-demo
   ports:
     - port: 80
       targetPort: 80
